@@ -1,0 +1,76 @@
+@import variables
+@import mixins
+@import functions
+@import buttons
+@import components
+@import grid
+
+
+body
+  font-family: $font-stack
+  background: #f5f5f5
+  margin: 0
+  padding: 0
+
+nav
+  background: $primary-color
+  padding: 1rem
+  text-align: center
+  a
+    color: white
+    text-decoration: none
+    margin: 0 10px
+    font-size: px-to-rem(18)
+    &:hover
+      text-decoration: underline
+
+h1
+  text-align: center
+  margin: 2rem 0
+  color: $secondary-color
+
+// ======== CONTENEDOR DE TARJETAS ========
+.boxesContainer
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  gap: 20px
+  padding: 20px
+
+.cardBox
+  perspective: 1000px
+
+.card
+  width: 250px
+  height: 300px
+  position: relative
+  transform-style: preserve-3d
+  transition: transform 0.6s
+  &:hover
+    transform: rotateY(180deg)
+
+.front, .back
+  position: absolute
+  width: 100%
+  height: 100%
+  backface-visibility: hidden
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  border-radius: 8px
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+  padding: 20px
+
+.front
+  background: white
+  color: $primary-color
+
+.back
+  background: $secondary-color
+  color: white
+  transform: rotateY(180deg)
+  a
+    @include button-style(#e74c3c, 10px 20px)
+    text-decoration: none
+    margin-top: 10px

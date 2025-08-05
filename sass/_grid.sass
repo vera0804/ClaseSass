@@ -1,0 +1,13 @@
+// Sistema de 12 columnas
+@for $i from 1 through 12
+  .col-#{$i}
+    width: (100% / 12) * $i
+    float: left
+    padding: 10px
+
+// Media queries para pantallas pequeñas
+@media (max-width: 768px)
+  @for $i from 1 through 12
+    .col-#{$i}
+      width: 100%
+      float: none
